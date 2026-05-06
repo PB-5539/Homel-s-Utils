@@ -16,4 +16,3 @@ a simpler way to create tkinter widgets for both beginners and experts
       can be destroyed with a little X icon
       can house anything a regular frame or window can
       note: does have issues on slower CPUs (<4-core, <4ghz) with a visual bug
->>>>>>> d203162a626694fdfcbde60c6061643d03ce806a
