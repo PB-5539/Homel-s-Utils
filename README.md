@@ -9,6 +9,11 @@ just a more cleaned-up version of ui.py and misc_utils.py from my final project 
 what thes module adds:
 
 a simpler way to create tkinter widgets for both beginners and experts
+
+and integrated system for creating tkinter objects modularly
+
+asigning each object a common name in a dictionary, rather than needing a dedicated variable
+
 2 new classes that inherit from tkinter objects
     DraggableFrame:
         a frame that works like a window within a window 
@@ -20,3 +25,5 @@ a simpler way to create tkinter widgets for both beginners and experts
         a canvas object that automatically draws a graph with configureable arguments
         has a seperate function to update the graph
         customizable width, height, x-range, y-range, point size, line size, background, line color
+
+note: this module is still in development, expect issues, confusion, and proprietary variables not within the module (this will be fixed eventually)
