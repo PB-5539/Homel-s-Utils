@@ -22,7 +22,6 @@ def create_main_ui(name: str = None, geometry: str = None, resizeable: bool = Tr
     print(ls_frame_windows)
     return root
 
-#-------------Create Other Widgets------------
 
 def _anchor_from_sticky(sticky):
     sticky = str(sticky).lower().strip()

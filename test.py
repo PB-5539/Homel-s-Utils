@@ -12,7 +12,7 @@ dict_entries = {}
 dict_frames = {}
 dict_text_areas = {}
 dict_graphs = {}
-ui.create_main_ui(name="Homel's Utils Demo", geometry="800x700", ls_root=ls_root) #some of these arguments are remnants of the project these came from and may be repurposed later
+ui.create_main_ui(name="Homel's Utils Demo", geometry="1920x1080", ls_root=ls_root) #some of these arguments are remnants of the project these came from and may be repurposed later
 
 
 ui.add_frame(parent=ls_root[0], name="frame test", xpad=10, ypad=30, backg="red", fill="both", LorR="left", dict_frames=dict_frames)
@@ -34,6 +34,29 @@ ui.add_button(parent=dict_frames["frame test"], name="button test", xpad=10, ypa
 #  the button is pressed.
 #dict_button stores the button as a key:value pair as described previously
 #all of the other arguments are the same as the frame
+
+ui.DraggableWindow(parent=ls_root[0], title="draggable window test", x=400, y=100, w=450, h=350, color="blue")
+#DraggableWindow is a custom class that creates a window that can be dragged around the screen by clicking and dragging the title bar. 
+#there is no way to store a refrence to this object currently but that may change in the future if i find a use for it.
+#title is the name that will appear at the top of the draggable frame window.
+#x and y are the coordinates for where the window will appear on the screen when it's created, in pixels, (0,0) is the top left 
+#  corner of the screen
+#w and h are the width and height of the window in pixels
+#color is the background color of the window which can use any of the colors tkinter supports
+
+ui.add_text_area(parent=dict_frames["frame test"], name="text area test", xpad=10, ypad=10, fill="both", backg="white", dict_text_areas=dict_text_areas)
+#dict_frames["frame test"] refers to the previously made frame
+#name is what is stored as the key for this object in the dict_text_areas dictionary
+#all of the other arguments are the same as usual
+
+dict_text_areas["text area test"].insert("end", "this is a text area, you can type in it and it will scroll when you reach the end of the visible area. you can also insert text into it using the insert method as shown here. It can also be used to display text that is too long to fit in the visible area as well as being configurable to be read-only if you want a text-based interface with tkinter\n\n")
+#this line uses the insert method of the text area object to insert some text into the text area, the "end" argument tells it to insert 
+#  the text at the end of the current text in the text area, you could also use "1.0" to insert at the beginning or "2.5" to insert at 
+#  line 2 character 5, there are also other options for where to insert text that you can find in the tkinter documentation as this is 
+#  not part of the homel's utils module.
+#\n is used to create a new line in the text area, this is a common way to format text in a text area as it allows you to control where
+#  lines break and how the text is displayed.
+
 
 
 

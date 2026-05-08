@@ -15,4 +15,4 @@ a simpler way to create tkinter widgets for both beginners and experts
       it is moveable by dragging the top bar 
       can be destroyed with a little X icon
       can house anything a regular frame or window can
-      note: does have issues on slower CPUs (<4-core, <4ghz) with a visual bug
+      note: does have issues on slower CPUs (<2-core, <3ghz) with a visual bug
