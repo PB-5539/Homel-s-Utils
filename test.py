@@ -53,8 +53,10 @@ ui.dict_text_areas["text area test"].insert("end", "this is a text area, you can
 #  lines break and how the text is displayed.
 
 def logic_loop():
-    print("this code will run either 1000 times a second or as fast as possible if it can't run at 1000 times a second.")
-    ls_root[0].after(1, logic_loop)
+    print("this code will run either 100 times a second or as fast as possible.")
+    #for loops like this it is best to keep a counter variable for how many times this loop has run, this would be useful for timing while not interupting other functions. 
+    ls_root[0].after(10, logic_loop)
+    #this should stay last in the logi_loop function, the name of this function can be anything so long as it matches elsewhere.
 
 ls_root[0].after(1000, logic_loop)
 #this waits one second while Tkinter starts up, then starts the logic loop. depending on the hardware you may want to change the timing on "ls_root[0].after(1, logic_loop)" to
