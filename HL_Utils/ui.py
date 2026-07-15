@@ -1,4 +1,12 @@
 import tkinter as tk
+#------------Variables-----------------------
+dict_buttons = {}
+dict_sliders = {}
+dict_labels = {}
+dict_entries = {}
+dict_frames = {}
+dict_text_areas = {}
+dict_graphs = {}
 #-------------Create Main Windows------------
 def create_main_ui(name: str = None, geometry: str = None, resizeable: bool = True, ls_root: list = None, ls_terminal: list = None, ls_frame_windows: list = None, dict_frames: dict = None):
     ls_root = [] if ls_root is None else ls_root
