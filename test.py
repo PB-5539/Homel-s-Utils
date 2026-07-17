@@ -1,6 +1,19 @@
 import HL_Utils
 from HL_Utils import ui
-"""NOTE: this is not a tutorial for Tkinter, nor is this associated with the developers of the Tkinter module. this is an independent project."""
+"""
+NOTE: this is not a tutorial for Tkinter, nor is this associated with the developers of the Tkinter module. 
+this is an independent project made to make working with Tkinter easier for anyone who is new to the module
+or anyone who is new to python in general. 
+(this does not cover most of the basics but it outlines some concepts here and there that may be less evident)
+"""
+#-------some info-------
+#this module prints debug information every time an object is created using it, commonly something like <object> created with name: <name> with parent: <parent object>. xpad: <horizontal padding> etc...
+#this module was partially made using AI*, I have kept the usage to a minimum and with that this project was heavily iterated on by me alone. I understand why some may be against it, I thought I would at least make that clear.
+#again this is a simple module for beginners to Tkinter and it is only made by one person (with minimal help from AI) whom of which is also relatively new to python so expect inconsistencies, bugs, Inneficient methods, and any other problems.
+#I do intend to update this but do not expect updates very often, I do accept suggestions and to that I will try to the best of my ability to add them if it fits.
+#apologies if any of the comments are confusing, this was a branch project of my final project for my python class. Its a collection of useful functions I used to simplify Tkinter's process for creating and customizing widgets when working on said final project.
+#-----------------------
+
 #lists for storing refrences to Tkinter objects
 ls_root = []
 #dictionaries for refrencing tkinter widgets by a simpler-string based name system where the key is the name and the value is the object, 
@@ -44,16 +57,16 @@ ui.add_text_area(parent=ui.dict_frames["frame test"], name="text area test", xpa
 #name is what is stored as the key for this object in the dict_text_areas dictionary
 #all of the other arguments are the same as usual
 
-ui.dict_text_areas["text area test"].insert("end", "this is a text area, you can type in it and it will scroll when you reach the end of the visible area. you can also insert text into it using the insert method as shown here. It can also be used to display text that is too long to fit in the visible area as well as being configurable to be read-only if you want a text-based interface with tkinter.\n\nnow this text should be below the previous text with a one line space between.")
+ui.dict_text_areas["text area test"].insert("end", f"this is a text area, you can type in it and it will scroll when you reach the end of the visible area. you can also insert text into it using the insert method as shown here. It can also be used to display text that is too long to fit in the visible area as well as being configurable to be read-only if you want a text-based interface with tkinter.\nUsing {r"\n"} (the newline keyword) pushes all of the following text to the next line, if you look at the code after this there are 2 after this one and one before this one. \n\nNow this text should be below the previous text with a one line space between.")
 #this line uses the insert method of the text area object to insert some text into the text area, the "end" argument tells it to insert 
 #  the text at the end of the current text in the text area, you could also use "1.0" to insert at the beginning or "2.5" to insert at 
 #  line 2 character 5, there are also other options for where to insert text that you can find in the tkinter documentation as this is 
 #  not part of the homel's utils module.
-#\n is used to create a new line in the text area, this is a common way to format text in a text area as it allows you to control where
+#'\n' is used to create a new line in the text area, this is a common way to format text in a text area as it allows you to control where
 #  lines break and how the text is displayed.
 
 def logic_loop():
-    print("this code will run either 100 times a second or as fast as possible.")
+    print("this code will run either 100 times a second or as fast as possible.") #this might clutter up the console so avoid actually printing so much
     #for loops like this it is best to keep a counter variable for how many times this loop has run, this would be useful for timing while not interupting other functions. 
     ls_root[0].after(10, logic_loop)
     #this should stay last in the logi_loop function, the name of this function can be anything so long as it matches elsewhere.
@@ -63,3 +76,16 @@ ls_root[0].after(1000, logic_loop)
 # relieve any resource stress.
 ui.run(ls_root[0])
 #this runs the actual ui, it starts the mainloop function for tkinter where it processes everything UI related, this will allow ls_root[0].after to run based on it's set time.
+
+
+#---*AI Usage Clarification---
+#AI (GPT-OSS:20b hosted through Ollama on my own local server) was used to generate the following parts of this module:
+
+#-The Graph Drawer-
+#The Idea was mine and I had a reasonable assumtion of how it would work but I had no Idea how to actually get it to work with the updating system I wanted. 
+
+#-The Draggable Frame-
+#Same thing, I had the idea and roughly an idea as to how it would works but had no idea how to actually controll windows like I needed to.
+
+#-General Edits-
+#Mostly just using AI for the more tedious tasks of changing all of the functions from Positional Arguments to Keyword Arguments, also handling any simple additions like the cardinal direction alignment that I never actually ended up using in the original project this came from.
